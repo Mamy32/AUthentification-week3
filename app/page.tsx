@@ -5,7 +5,7 @@ export default function Home(){
     <div>
       <h1>This is the button component </h1>
       <Button 
-      variant= "outline"
+      variant= "outline"//fdff
       className="bg-red-400 border-2 border-gray-700 hover: bg-red-200 cursor-pointer"
       
       >Button</Button>
