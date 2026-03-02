@@ -1,15 +1,10 @@
-import { Button }  from "@/components/ui/button";
+import Button from "@/components/ui/Button";
 
-export default function Home(){
+export default function Home() {
   return (
     <div>
-      <h1>This is the button component </h1>
-      <Button 
-      variant= "outline"//fdff
-      className="bg-red-400 border-2 border-gray-700 hover: bg-red-200 cursor-pointer"
-      
-      >Button</Button>
-
+      <h1>My Page</h1>
+      <Button label="Click Me" />
     </div>
-  )
+  );
 }
