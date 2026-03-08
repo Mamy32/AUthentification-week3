@@ -13,18 +13,90 @@ export default function Docs() {
     paths: {
       "/api/task": {
         get: {
-          summary: "Get all tasks"
+          summary: "Get all tasks",
+          responses: {
+            "200": {
+              description: "List of tasks",
+              content: {
+                "application/json": {
+                  example: [
+                    {
+                      id: 1,
+                      title: "Learn Next.js API",
+                      completed: false
+                    },
+                    {
+                      id: 2,
+                      title: "Finish Backend Assignment",
+                      completed: false
+                    }
+                  ]
+                }
+              }
+            }
+          }
         },
+
         post: {
-          summary: "Create a task"
+          summary: "Create a task",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    title: { type: "string" }
+                  }
+                }
+              }
+            }
+          },
+          responses: {
+            "200": {
+              description: "Task created"
+            }
+          }
         }
       },
+
       "/api/task/{id}": {
         put: {
-          summary: "Update task"
+          summary: "Update task",
+          parameters: [
+            {
+              name: "id",
+              in: "path",
+              required: true,
+              schema: {
+                type: "integer"
+              }
+            }
+          ],
+          responses: {
+            "200": {
+              description: "Task updated"
+            }
+          }
         },
+
         delete: {
-          summary: "Delete task"
+          summary: "Delete task",
+          parameters: [
+            {
+              name: "id",
+              in: "path",
+              required: true,
+              schema: {
+                type: "integer"
+              }
+            }
+          ],
+          responses: {
+            "200": {
+              description: "Task deleted"
+            }
+          }
         }
       }
     }
